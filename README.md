@@ -30,7 +30,7 @@ OmniColPress enables late-interaction retrieval across video, image, audio, and 
 - **Multiple compression methods** — Attention-Guided Clustering (AGC) with Learned Universal Query tokens, Memory Tokens, Hierarchical Pooling, and Sequence Resizing.
 - **Modular architecture** — Every component — dataset, dataloader, collator, processor, model, index, compression method, single/multi-vector mode — is fully modularized and easy to configure or extend.
 - **Efficient training** — LoRA, DeepSpeed ZeRO, gradient checkpointing, half-precision training, memory-efficient distributed contrastive loss, and mixed-precision similarity computation — carefully optimized and well supported.
-- **Built-in evaluation** — In-training validation with Recall@k, NDCG@k, and MRR metrics, plus standalone index building (Flat, MultiVec, Fast-Plaid) and retrieval evaluation.
+- **Built-in evaluation** — In-training validation with Recall@k, NDCG@k, and MRR metrics, plus standalone index building (MultiVec-Flat, Faiss, Fast-Plaid) and retrieval evaluation.
 - **Flexible data recipes** — Multi-dataset training via YAML config with per-dataset validation splits, HuggingFace datasets, and local file formats (JSON, CSV, Parquet).
 - **Smooth workflow** — Multi-GPU training with WandB logging, working seamlessly out of the box.
 
