@@ -89,7 +89,7 @@ deepspeed --num_gpus=4 src/train.py \
 
 ### Training Configuration
 
-The following sections outline the key arguments for training. Arguments marked with `*` need to be specifically modified for each run, while others typically remain unchanged once configured.
+The following sections outline the key arguments for training. Arguments marked with `*` need to be specifically modified for each variant of method, while others typically remain unchanged once configured.
 
 #### 1. Model / Processor *
 
