@@ -446,10 +446,13 @@ Media paths are relative to `assets_path` (or `corpus_assets_path` in YAML confi
 If you find OmniColPress useful, please cite:
 
 ```bibtex
-@misc{placeholder,
-  title={Placeholder},
-  author={},
-  year={2026},
-  url={}
+@misc{qin2026multivectorindexcompressionmodality,
+      title={Multi-Vector Index Compression in Any Modality}, 
+      author={Hanxiang Qin and Alexander Martin and Rohan Jha and Chunsheng Zuo and Reno Kriz and Benjamin Van Durme},
+      year={2026},
+      eprint={2602.21202},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2602.21202}, 
 }
 ```
