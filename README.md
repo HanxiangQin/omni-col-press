@@ -1,5 +1,11 @@
 # OmniColPress
 
+<p align="center">
+[![arXiv](https://img.shields.io/badge/arXiv-2602.21202-b31b1b.svg)](https://arxiv.org/abs/2602.21202)
+[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Collection-yellow)](https://huggingface.co/collections/hltcoe/multi-vector-index-compression-in-any-modality)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+</p>
+
 **A modular framework for training and inference of (compressed) multi-vector retrieval across any modality.**
 
 OmniColPress enables late-interaction retrieval across video, image, audio, and text modalities using multimodal foundation models (Qwen2.5-VL, Qwen2.5-Omni, Qwen3-VL, etc.). It implements several representation compression methods to reduce the storage and computational cost of multi-vector retrieval while preserving retrieval quality.
