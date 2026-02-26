@@ -1,9 +1,9 @@
 # OmniColPress
 
 <p align="center">
-[![arXiv](https://img.shields.io/badge/arXiv-2602.21202-b31b1b.svg)](https://arxiv.org/abs/2602.21202)
-[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Collection-yellow)](https://huggingface.co/collections/hltcoe/multi-vector-index-compression-in-any-modality)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+  <a href="https://arxiv.org/abs/2602.21202"><img src="https://img.shields.io/badge/arXiv-2602.21202-b31b1b.svg" alt="arXiv"></a>
+  <a href="https://huggingface.co/collections/hltcoe/multi-vector-index-compression-in-any-modality"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Collection-yellow" alt="HuggingFace"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
 </p>
 
 **A modular framework for training and inference of (compressed) multi-vector retrieval across any modality.**
