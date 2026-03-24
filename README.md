@@ -397,7 +397,7 @@ torchrun --nproc_per_node=NUM_GPUS -m src.evaluate [arguments]
 |------------|-------------|----------|
 | `flat` | Single-vector FAISS index | Single-vector pooling methods |
 | `multivec` | Multi-vector index (PyTorch-based) | Multi-vector retrieval (ColBERT, AGC, Memory Tokens, Sequence Resizing) |
-| `fast-plaid` | Fast-Plaid multi-vector index | Multi-vector retrieval (small corpora only; see [fast-plaid issue #27](https://github.com/lightonai/fast-plaid/issues/27)) |
+| `fast-plaid` | Fast-Plaid multi-vector index | Multi-vector retrieval ~~*(small corpora only; see [fast-plaid issue #27](https://github.com/lightonai/fast-plaid/issues/27))*~~ <br>**Update:** Thanks to the fantastic work by the LightOn team in [v1.4.5](https://github.com/lightonai/fast-plaid/releases/tag/1.4.5) ([PR #39](https://github.com/lightonai/fast-plaid/pull/39)), the PyTorch sort-based `quantile()` bottleneck was elegantly resolved by switching to a `kthvalue` approach. Fast-Plaid can now scale to corpora of essentially any size (including [Multivent2.0](https://huggingface.co/datasets/hltcoe/MultiVENT2.0)), and is highly recommended! |
 
 ---
 
