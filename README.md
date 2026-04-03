@@ -25,6 +25,9 @@ OmniColPress enables late-interaction retrieval across video, image, audio, and 
   - [Step 2: Retrieval](#step-2-retrieval-evaluation)
   - [Index Types](#index-types)
 - [Data Format](#data-format)
+  - [Training Data](#training-data)
+  - [Corpus Data](#corpus-data)
+  - [Evaluation files (queries & qrels)](#evaluation-files-queries--qrels)
 - [Notes](#notes)
 - [Citation](#citation)
 
@@ -403,9 +406,11 @@ torchrun --nproc_per_node=NUM_GPUS -m src.evaluate [arguments]
 
 ## Data Format
 
+Training, corpus, and query files are loaded with HuggingFace `datasets` (`load_dataset`). The **on-disk format is not fixed** (JSONL, Parquet, CSV, etc.), but **field names** need to be matched with the schemas below by default.
+
 ### Training Data
 
-Each line in the training file is a JSON object:
+Each training row may include the following keys (shown as JSON as example):
 
 ```json
 {
@@ -423,7 +428,7 @@ Media fields (`query_image`, `query_video`, `query_audio`) are optional — incl
 
 ### Corpus Data
 
-Each line in the corpus file is a JSON object:
+Each corpus row may include the following keys (shown as JSON as example):
 
 ```json
 {
@@ -438,13 +443,21 @@ Each line in the corpus file is a JSON object:
 
 Media paths are relative to `assets_path` (or `corpus_assets_path` in YAML config). Fields `title`, `image`, `video`, and `audio` are optional.
 
+### Evaluation files (queries & qrels)
+
+For `src.evaluate`, queries and ground-truth labels are separate from the training corpus.
+
+**Queries:** a query identifier (`query_id`, or `id`, or `query-id`) and text (`query` or `query_text`). Optional media fields mirror training (`query_image`, `query_video`, `query_audio`).
+
+**Relevance judgments (qrels):** The helper in `src/utils/loaders.py` accepts **JSON lines** with `query_id`, `doc_id`, and `relevance` (integer; values greater than 0 count as relevant for ranking metrics), or a **TREC-style** text file with space-separated `query_id  Q0  doc_id  relevance`.
+
 ---
 
 ## Notes
 
 - Arguments marked with `*` generally need to be modified for each experiment.
 - Model and pooling arguments must be identical across training, index building, and evaluation.
-- The framework supports both single-dataset and multi-dataset training (via `train_yaml`).
+- The framework supports both single-dataset and multi-dataset training; see [Training Configuration](#training-configuration).
 ---
 
 ## Citation
