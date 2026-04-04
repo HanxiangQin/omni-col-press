@@ -77,7 +77,13 @@ def _detect_model_family(model_name_or_path: str) -> str:
     name_l = model_name_or_path.lower()
     if ("qwen2.5-vl" in name_l) or ("qwen3-vl" in name_l) or ("moca-qwen25vl" in name_l):
         return "qwen_vl"
-    if ("qwen2.5-omni" in name_l) or ("omniembed" in name_l) or ("colqwen-omni" in name_l):
+    if (
+        ("qwen2.5-omni" in name_l)
+        or ("qwen3-omni" in name_l)
+        or ("qwen3_omni" in name_l)
+        or ("omniembed" in name_l)
+        or ("colqwen-omni" in name_l)
+    ):
         return "qwen_omni"
     raise ValueError(f"Model {model_name_or_path} not supported")
 
@@ -89,6 +95,9 @@ def _detect_transformer_cls(model_name_or_path: str):
     elif ("qwen3-vl" in name_l):
         from src.models.qwen3_vl_embed.qwen3_vl_embed import Qwen3ForEmbedding
         return Qwen3ForEmbedding
+    elif ("qwen3-omni" in name_l) or ("qwen3_omni" in name_l):
+        from src.models.qwen3_omni_moe_embed.qwen3_omni_moe_embed import Qwen3OmniMoeForEmbedding
+        return Qwen3OmniMoeForEmbedding
     elif ("qwen2.5-omni" in name_l):
         from src.models.qwen2_5_omni_embed.qwen2_5_omni_embed import Qwen2_5OmniForEmbedding
         return Qwen2_5OmniForEmbedding
